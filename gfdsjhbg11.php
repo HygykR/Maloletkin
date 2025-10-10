@@ -1,5 +1,5 @@
 <?php
-$str = 'Hello!';
+$str = 'Привет!';
 echo $str, '<br>';
-echo $str[0]
+echo strlen($str);
 ?>
