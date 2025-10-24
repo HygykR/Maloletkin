@@ -43,6 +43,6 @@ $arr = [
   ],
 ];
 $result = getArrayfamily($arr, 300, 500);
-echo 'Конфеты с ценой за кг от 300 до 500р: ';
+echo 'Конфеты с ценой за кг от 300 до 500р: <br>';
 print_r($result);
 ?>
