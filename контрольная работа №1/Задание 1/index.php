@@ -9,7 +9,7 @@ function palindrom($str) {
     $cleanStr = str_replace(' ', '', strtolower($str));
     $result = ($cleanStr == strrev($cleanStr));
     echo "Строка: '$str'<br>";
-    echo "Результат: ", ($result ? 'true' : 'false') . "<br><br>";
+    echo "Результат: ", ($result ? 'true' : 'false'), "<br><br>";
     
     return $result;
 }
