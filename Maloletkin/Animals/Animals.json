@@ -1,0 +1,54 @@
+[
+    {
+        "class": "NotFlyBird",
+        "height": 40,
+        "weight": 50,
+        "type": "Пингвин",
+        "wingspan": 100
+    },
+    {
+        "class": "NotFlyBird",
+        "height": 120,
+        "weight": 80,
+        "type": "Страус",
+        "wingspan": 200
+    },
+    {
+        "class": "Bird",
+        "height": 10,
+        "weight": 100,
+        "type": "Воробей",
+        "wingspan": 20
+    },
+    {
+        "class": "Bird",
+        "height": 15,
+        "weight": 80,
+        "type": "Голубь",
+        "wingspan": 25
+    },
+    {
+        "class": "Animal",
+        "height": 3,
+        "weight": 10,
+        "type": "Муравей"
+    },
+    {
+        "class": "Animal",
+        "height": 5,
+        "weight": 15,
+        "type": "Паук"
+    },
+    {
+        "class": "Mammals",
+        "height": 50,
+        "weight": 40,
+        "type": "Мартышка"
+    },
+    {
+        "class": "Mammals",
+        "height": 100,
+        "weight": 200,
+        "type": "Тигр"
+    }
+]
