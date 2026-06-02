@@ -11,9 +11,14 @@ if($request->isPost){
     $feedback->loadFromForm($request->post(), $_FILES['img'] ?? []);
     try{
         $feedback->validate();
+
+        if(method_exists($feedback, 'setStatus')) {
+            $feedback->setStatus(0);
+        }
+
         if($feedback->save()){
-            $_SESSION['flash'] = 'Отзыв добавлен';
-            header('Location: index.php');
+            $_SESSION['flash'] = 'Отзыв отправлен на модерацию и появится после проверки администратором.';
+            header('Location: feedback.php');
             exit();
         }
     } catch(\InvalidArgumentException $e){

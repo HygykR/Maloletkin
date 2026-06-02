@@ -2,6 +2,20 @@
 <?php include 'src/header.php' ?>
         <main id="main" class="flex-shrink-0" role="main">
             <div class="container">
+                
+                <?php
+                if (!isset($_SESSION)) {
+                    session_start();
+                }
+                if (!empty($_SESSION['flash'])): ?>
+                    <div class="alert alert-success mt-3" role="alert">
+                        <strong>Успешно!</strong> <?= htmlspecialchars($_SESSION['flash']) ?>
+                    </div>
+                    <?php 
+                    unset($_SESSION['flash']); 
+                endif; 
+                ?>
+
                 <nav aria-label="breadcrumb">
                     <ol id="w4" class="breadcrumb">
                         <li class="breadcrumb-item"><a href="./index.php">Главная</a></li>
@@ -68,7 +82,7 @@
                                                 ?>
                                             </div>
                                             <a class="btn btn-primary" href="application.php?id=<?= $app['id'] ?>">просмотр</a>
-                                            <a class="btn btn-danger" href="delete-app.php?id=<?= $app['id'] ?>">отменить</a>
+                                            <a class="btn btn-danger" href="delete-user-app.php?id=<?= $app['id'] ?>">отменить</a>
                                         </div>
                                     </div>
                                 </div>

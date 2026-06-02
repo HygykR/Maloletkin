@@ -1,27 +1,31 @@
 <?php
-
 use src\User;
 use src\exceptions\InvalidArgumentException;
 
-$page = 'feedback.php';
+$page = 'register.php';
 
 require 'init.php';
 require_once 'User.php';
 
-$user = new User($request, $db);
+if ($user->isGuest || !$user->isAdmin) {
+    header('Location: feedback.php');
+    exit;
+}
+
+$newUser = new User($request, $db);
 
 $error = null;
 $flash = null;
 
 if ($request->isPost) {
     $formData = $request->post()['RegisterForm'] ?? [];
-    $user->loadFromForm($formData);
+    $newUser->loadFromForm($formData);
 
     try {
-        $user->validate();
+        $newUser->validate();
 
-        if ($user->save()) {
-            $_SESSION['flash'] = 'Вы успешно зарегистрировались!';
+        if ($newUser->save()) {
+            $_SESSION['flash'] = 'Новый пользователь успешно зарегистрирован!';
             header('Location: ' . $_SERVER['REQUEST_URI']);
             exit;
         } else {

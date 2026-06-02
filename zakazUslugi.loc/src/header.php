@@ -45,12 +45,18 @@
                         </li>
                         <?php endif ?>
                         
+                        <?php if(!$user->isGuest && $user->isAdmin()): ?>
                         <li class="nav-item">
                             <a class="nav-link <?= $current_file === 'register.php' ? 'active fw-bold text-white' : '' ?>" href="register.php">регистрация</a>
                         </li>
+                        <?php endif; ?>
+
+                        <?php if(!$user->isGuest && !$user->isAdmin()): ?>
                         <li class="nav-item">
                             <a class="nav-link <?= in_array($current_file, ['account.php', 'change-password.php']) ? 'active fw-bold text-white' : '' ?>" href="account.php">личный кабинет</a>
                         </li>
+                        <?php endif; ?>
+
                         
                         <?php if(!$user->isGuest && $user->isAdmin()): ?>
                         <li class="nav-item">
